@@ -3,7 +3,7 @@ name: Dataset Conversion
 on:
   push:
     tags:
-      - 'v*'
+      - '*'
 
 jobs:
   convert_to_coco:
