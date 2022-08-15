@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        goodle_drive_file_id: 1FMCPw5fD9Sl-0eTXhb6FS6YBDkaSIyTB
+        goodle_drive_file_id: [1FMCPw5fD9Sl-0eTXhb6FS6YBDkaSIyTB]
     steps:
     - uses: actions/cache@v2
       id: cache_dataset
