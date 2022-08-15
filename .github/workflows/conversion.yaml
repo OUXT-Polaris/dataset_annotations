@@ -32,11 +32,11 @@ jobs:
     - name: Unzip images
       run: unzip images.zip && mv images/* . && rm -rf images
     - name: Install labelme and pycocotools
-      run: pip3 install pycocotools labelme
+      run: pip3 install pycocotools labelme==3.16.7
     - name: Download script
-      run: wget https://raw.githubusercontent.com/wkentaro/labelme/main/examples/instance_segmentation/labelme2coco.py
+      run: wget https://raw.githubusercontent.com/wkentaro/labelme/v3.16.7/examples/instance_segmentation/labelme2coco.py
     - name: Convert to coco
-      run: python labelme2coco.py . coco --labels classes.txt
+      run: python3 labelme2coco.py . coco --labels classes.txt
     - uses: actions/upload-artifact@v3
       with:
         name: coco_dataset

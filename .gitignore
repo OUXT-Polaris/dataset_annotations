@@ -1,1 +1,3 @@
 *.JPG
+labelme2coco.py
+coco
