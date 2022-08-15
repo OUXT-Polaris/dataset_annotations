@@ -1,3 +1,5 @@
+name: Dataset Conversion
+
 on:
   workflow_dispatch:
   schedule:
