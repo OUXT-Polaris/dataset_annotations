@@ -21,6 +21,9 @@ jobs:
       with:
         path: images.zip
         key: images-${{ matrix.goodle_drive_file_id }}
+    - name: Failed when cache does not hit
+      if: steps.cache_dataset.outputs.cache-hit != 'true'
+      run: exit 1
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
