@@ -1,0 +1,29 @@
+on:
+  workflow_dispatch:
+    inputs:
+      google_drive_file_id:
+        type: string
+        required: true
+        description: google drive file ID for image zip file.
+
+jobs:
+  download_dataset:
+    name: download_dataset
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/cache@v2
+      id: cache_dataset
+      with:
+        path: images.zip
+        key: images-${{ github.event.inputs.google_drive_file_id }}
+    - name: Set up Python
+      if: steps.cache_dataset.outputs.cache-hit != 'true'
+      uses: actions/setup-python@v1
+      with:
+        python-version: "3.6.15"
+    - name: Install
+      if: steps.cache_dataset.outputs.cache-hit != 'true'
+      run: pip3 install gdown
+    - name: Download dataset
+      if: steps.cache_dataset.outputs.cache-hit != 'true'
+      run: gdown ${{ github.event.inputs.google_drive_file_id }} -O images.zip
