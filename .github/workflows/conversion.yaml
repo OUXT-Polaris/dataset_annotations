@@ -35,7 +35,7 @@ jobs:
       run: pip3 install pycocotools labelme
     - name: Download script
       run: wget https://raw.githubusercontent.com/wkentaro/labelme/main/examples/instance_segmentation/labelme2coco.py
-    - nane: Convert to coco
+    - name: Convert to coco
       run: python labelme2coco.py . coco --labels classes.txt
     - uses: actions/upload-artifact@v3
       with:
