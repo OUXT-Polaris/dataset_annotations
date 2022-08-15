@@ -1,3 +1,5 @@
 *.JPG
 labelme2coco.py
+cocosplit.py
 coco
+*.zip

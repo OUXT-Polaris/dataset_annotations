@@ -37,7 +37,15 @@ jobs:
       run: wget https://raw.githubusercontent.com/wkentaro/labelme/v3.16.7/examples/instance_segmentation/labelme2coco.py
     - name: Convert to coco
       run: python3 labelme2coco.py . coco --labels classes.txt
+    - name: Install cocosplit depends
+      run: wget https://raw.githubusercontent.com/akarazniewicz/cocosplit/master/requirements.txt && pip install -r requirements
+    - name: Download split script
+      run: wget https://raw.githubusercontent.com/akarazniewicz/cocosplit/master/cocosplit.py
+    - name: Split dataset
+      run: python3 cocosplit.py --having-annotations --multi-class -s 0.8 coco/annotations.json coco/train.json coco/test.json
+    - name: zip dataset
+      run: zip coco.zip -r coco
     - uses: actions/upload-artifact@v3
       with:
         name: coco_dataset
-        path: coco
+        path: coco.zip
