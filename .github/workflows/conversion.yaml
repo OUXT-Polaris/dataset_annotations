@@ -33,6 +33,7 @@ jobs:
   convert_to_coco:
     name: convert_to_coco
     runs-on: ubuntu-20.04
+    needs: [download_dataset]
     strategy:
       matrix:
         goodle_drive_file_id: [1FMCPw5fD9Sl-0eTXhb6FS6YBDkaSIyTB]
