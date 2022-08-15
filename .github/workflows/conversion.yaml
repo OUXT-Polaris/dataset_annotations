@@ -1,12 +1,9 @@
 name: Dataset Conversion
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: 0 0 * * *
   push:
-    branches:
-      - master
+    tags:
+      - 'v*'
 
 jobs:
   convert_to_coco:
@@ -49,3 +46,15 @@ jobs:
       with:
         name: coco_dataset
         path: coco.zip
+  publish_release:
+    name: publish_release
+    runs-on: ubuntu-20.04
+    needs: [convert_to_coco]
+    steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: coco_dataset
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "coco.zip"
+        token: ${{ secrets.WAMV_TAN_BOT_SECRET }}
