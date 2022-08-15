@@ -38,7 +38,7 @@ jobs:
     - name: Convert to coco
       run: python3 labelme2coco.py . coco --labels classes.txt
     - name: Install cocosplit depends
-      run: wget https://raw.githubusercontent.com/akarazniewicz/cocosplit/master/requirements.txt && pip install -r requirements
+      run: wget https://raw.githubusercontent.com/akarazniewicz/cocosplit/master/requirements.txt && pip install -r requirements.txt
     - name: Download split script
       run: wget https://raw.githubusercontent.com/akarazniewicz/cocosplit/master/cocosplit.py
     - name: Split dataset
