@@ -28,4 +28,8 @@ jobs:
       with:
         python-version: "3.6.15"
     - name: Unzip images
-      run: unzip images.zip && mv images/* .
+      run: unzip images.zip && mv images/* . && rm -rf images
+    - name: Install labelme and pycocotools
+      run: pip3 install pycocotools labelme
+    - name: Download script
+      run: wget https://raw.githubusercontent.com/wkentaro/labelme/main/examples/instance_segmentation/labelme2coco.py
