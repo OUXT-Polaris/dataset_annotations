@@ -18,3 +18,4 @@ red_circle
 red_cross
 red_triangle
 red_totem
+white_buoy

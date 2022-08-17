@@ -35,6 +35,57 @@
       ],
       "shape_type": "rectangle",
       "flags": {}
+    },
+    {
+      "label": "orange_buoy",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          5402.326530612245,
+          1995.612244897959
+        ],
+        [
+          5351.306122448979,
+          1965.0
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "white_buoy",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          4998.244897959184,
+          2058.877551020408
+        ],
+        [
+          4910.489795918367,
+          1926.2244897959185
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "white_buoy",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          4898.244897959184,
+          2009.8979591836737
+        ],
+        [
+          4830.897959183673,
+          1907.857142857143
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
     }
   ],
   "lineColor": [
