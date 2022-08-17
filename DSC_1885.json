@@ -3,7 +3,7 @@
   "flags": {},
   "shapes": [
     {
-      "label": "orange_bouy",
+      "label": "orange_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -156,7 +156,7 @@
       "flags": {}
     },
     {
-      "label": "orange_bouy",
+      "label": "orange_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -173,7 +173,7 @@
       "flags": {}
     },
     {
-      "label": "green_bouy",
+      "label": "green_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -190,7 +190,7 @@
       "flags": {}
     },
     {
-      "label": "green_bouy",
+      "label": "green_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -207,7 +207,7 @@
       "flags": {}
     },
     {
-      "label": "red_bouy",
+      "label": "red_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [

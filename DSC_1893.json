@@ -3,7 +3,7 @@
   "flags": {},
   "shapes": [
     {
-      "label": "light_bouy",
+      "label": "light_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -122,7 +122,7 @@
       "flags": {}
     },
     {
-      "label": "blue_orange_bouy",
+      "label": "blue_orange_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -173,7 +173,7 @@
       "flags": {}
     },
     {
-      "label": "orange_bouy",
+      "label": "orange_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -190,7 +190,7 @@
       "flags": {}
     },
     {
-      "label": "black_bouy",
+      "label": "black_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -207,7 +207,7 @@
       "flags": {}
     },
     {
-      "label": "black_bouy",
+      "label": "black_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -224,7 +224,7 @@
       "flags": {}
     },
     {
-      "label": "black_bouy",
+      "label": "black_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -241,7 +241,7 @@
       "flags": {}
     },
     {
-      "label": "black_bouy",
+      "label": "black_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -258,7 +258,7 @@
       "flags": {}
     },
     {
-      "label": "black_bouy",
+      "label": "black_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -275,7 +275,7 @@
       "flags": {}
     },
     {
-      "label": "black_bouy",
+      "label": "black_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -292,7 +292,7 @@
       "flags": {}
     },
     {
-      "label": "black_bouy",
+      "label": "black_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -309,7 +309,7 @@
       "flags": {}
     },
     {
-      "label": "black_bouy",
+      "label": "black_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [

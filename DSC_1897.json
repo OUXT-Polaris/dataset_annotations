@@ -3,7 +3,7 @@
   "flags": {},
   "shapes": [
     {
-      "label": "green_bouy",
+      "label": "green_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
@@ -122,7 +122,7 @@
       "flags": {}
     },
     {
-      "label": "light_bouy",
+      "label": "light_buoy",
       "line_color": null,
       "fill_color": null,
       "points": [
