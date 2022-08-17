@@ -86,6 +86,125 @@
       ],
       "shape_type": "rectangle",
       "flags": {}
+    },
+    {
+      "label": "blue_orange_buoy",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          3114.5714285714284,
+          2099.6938775510203
+        ],
+        [
+          3041.1020408163267,
+          1940.5102040816328
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "red_totem",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          3004.3673469387754,
+          1995.612244897959
+        ],
+        [
+          2951.3061224489797,
+          1907.857142857143
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "green_totem",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          2865.591836734694,
+          2032.3469387755104
+        ],
+        [
+          2804.3673469387754,
+          1916.0204081632655
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "dock",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          5041.102040816327,
+          2226.2244897959185
+        ],
+        [
+          2339.061224489796,
+          1609.8979591836735
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "white_buoy",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          2010.4897959183675,
+          2042.5510204081634
+        ],
+        [
+          1953.3469387755104,
+          1913.979591836735
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "white_buoy",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          2045.183673469388,
+          1999.6938775510203
+        ],
+        [
+          2000.2857142857142,
+          1901.734693877551
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
+    },
+    {
+      "label": "white_buoy",
+      "line_color": null,
+      "fill_color": null,
+      "points": [
+        [
+          483.9591836734694,
+          2042.5510204081634
+        ],
+        [
+          402.3265306122449,
+          1907.857142857143
+        ]
+      ],
+      "shape_type": "rectangle",
+      "flags": {}
     }
   ],
   "lineColor": [
