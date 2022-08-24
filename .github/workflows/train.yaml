@@ -1,4 +1,4 @@
-name: train
+name: Train
 on:
   workflow_dispatch:
     inputs:
