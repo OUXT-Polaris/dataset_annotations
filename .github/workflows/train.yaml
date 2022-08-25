@@ -29,6 +29,7 @@ jobs:
     - name: unzip dataset
       run: |
         unzip coco.zip
+        rm -rf ouxt-2022-dataset
         mkdir ouxt-2022-dataset
         mv coco/* ouxt-2022-dataset
         cd ouxt-2022-dataset
