@@ -7,14 +7,14 @@ on:
         type: string
         required: false
         description: version of dataset
-  model:
-    description: model name
-    required: false
-    type: choice
-    options:
-      - yolox_nano
-      - yolox_s
-    default: yolox_nano
+      model:
+        description: model name
+        required: false
+        type: choice
+        options:
+          - yolox_nano
+          - yolox_s
+        default: yolox_nano
 jobs:
   build:
     name: Build
