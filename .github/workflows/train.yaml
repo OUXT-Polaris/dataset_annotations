@@ -7,6 +7,14 @@ on:
         type: string
         required: false
         description: version of dataset
+  model:
+    description: model name
+    required: false
+    type: choice
+    options:
+      - yolox_nano
+      - yolox_s
+    default: yolox_nano
 jobs:
   build:
     name: Build
@@ -30,3 +38,14 @@ jobs:
         cp -r JPEGImages val2017/
         mv validation.json ./annotations
         mv train.json ./annotations
+    - name: download training script and base weight
+      run: |
+        wget https://raw.githubusercontent.com/Megvii-BaseDetection/YOLOX/main/tools/train.py
+        wget https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/${{ github.event.inputs.model }}.pth
+    - name: train
+      run: |
+        python3 train.py -f exps/ouxt-2022-yolox-s/ouxt-2022-${{ github.event.inputs.model }}.py -d 1 -b 8 --fp16 -o -c ./${{ github.event.inputs.model }}.pth --caches
+    - uses: actions/upload-artifact@v2
+      with:
+        name: docker-logs
+        path: ./${{ github.event.inputs.model }}.pth
