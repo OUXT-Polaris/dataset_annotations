@@ -47,7 +47,7 @@ jobs:
         wget https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/${{ github.event.inputs.model }}.pth
     - name: train
       run: |
-        python3 train.py -f exps/ouxt-2022-yolox-s/ouxt-2022-${{ github.event.inputs.model }}.py -d 1 -b 8 --fp16 -o -c ./${{ github.event.inputs.model }}.pth --caches
+        python3 train.py -f exps/ouxt-2022-yolox-s/ouxt-2022-${{ github.event.inputs.model }}.py -d 1 -b 8 --fp16 -o -c ./${{ github.event.inputs.model }}.pth --cache
     - uses: actions/upload-artifact@v2
       with:
         name: docker-logs
