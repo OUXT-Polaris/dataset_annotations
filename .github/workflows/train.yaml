@@ -17,10 +17,10 @@ on:
         default: yolox_nano
 jobs:
   build:
-    name: Build
+    name: Train
     runs-on: [self-hosted, yolox_trainer]
     steps:
-    - name: cleanup
+    - name: Cleanup
       run: |
         rm -rf *
     - uses: dsaltares/fetch-gh-release-asset@master
@@ -29,7 +29,7 @@ jobs:
         version: ${{ github.event.inputs.dataset_version }}
         file: coco.zip
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: unzip dataset
+    - name: Unzip dataset
       run: |
         unzip coco.zip
         mkdir -p datasets/ouxt-2022-dataset
@@ -46,7 +46,7 @@ jobs:
         wget https://raw.githubusercontent.com/Megvii-BaseDetection/YOLOX/main/tools/train.py
         wget https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/${{ github.event.inputs.model }}.pth
         wget https://raw.githubusercontent.com/OUXT-Polaris/YOLOX/file-yolox-s/exps/ouxt-2022-yolox-s/ouxt-2022-yolox_s.py
-    - name: train
+    - name: Train
       run: |
         python3 train.py -f ouxt-2022-${{ github.event.inputs.model }}.py -d 1 -b 8 --fp16 -o -c ./${{ github.event.inputs.model }}.pth --cache
     - uses: actions/upload-artifact@v2
