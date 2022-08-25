@@ -49,6 +49,7 @@ jobs:
     - name: Train
       run: |
         export CUDA_VISIBLE_DEVICE=0
+        pip3 install tensorboard
         python3 train.py -f ouxt-2022-${{ github.event.inputs.model }}.py -d 1 -b 8 --fp16 -o -c ./${{ github.event.inputs.model }}.pth --cache
     - uses: actions/upload-artifact@v2
       with:
