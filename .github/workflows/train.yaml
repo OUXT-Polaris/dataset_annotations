@@ -32,9 +32,9 @@ jobs:
     - name: unzip dataset
       run: |
         unzip coco.zip
-        mkdir ouxt-2022-dataset
-        mv coco/* ouxt-2022-dataset
-        cd ouxt-2022-dataset
+        mkdir -p datasets/ouxt-2022-dataset
+        mv coco/* datasets/ouxt-2022-dataset
+        cd datasets/ouxt-2022-dataset
         mv test.json validation.json
         mkdir train2017 val2017 annotations
         cp -r JPEGImages train2017/
@@ -48,7 +48,6 @@ jobs:
         wget https://raw.githubusercontent.com/OUXT-Polaris/YOLOX/file-yolox-s/exps/ouxt-2022-yolox-s/ouxt-2022-yolox_s.py
     - name: train
       run: |
-        export YOLOX_DATADIR=$PWD/ouxt-2022-dataset
         python3 train.py -f ouxt-2022-${{ github.event.inputs.model }}.py -d 1 -b 8 --fp16 -o -c ./${{ github.event.inputs.model }}.pth --cache
     - uses: actions/upload-artifact@v2
       with:
