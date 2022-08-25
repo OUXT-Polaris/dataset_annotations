@@ -18,3 +18,15 @@ jobs:
         version: ${{ github.event.inputs.dataset_version }}
         file: coco.zip
         token: ${{ secrets.GITHUB_TOKEN }}
+    - name: unzip dataset
+      run: |
+        unzip coco.zip
+        mkdir ouxt-2022-dataset
+        mv coco/* ouxt-2022-dataset
+        cd ouxt-2022-dataset
+        mv test.json validation.json
+        mkdir train2017 val2017 annotations
+        cp -r JPEGImages train2017/
+        cp -r JPEGImages val2017/
+        mv validation.json ./annotations
+        mv train.json ./annotations
