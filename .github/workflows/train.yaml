@@ -52,7 +52,16 @@ jobs:
         export CUDA_VISIBLE_DEVICE=0
         pip3 install tensorboard
         python3 train.py -f ouxt-2022-${{ github.event.inputs.model }}.py -d 1 -b 8 --fp16 -o -c ./${{ github.event.inputs.model }}.pth --cache
+    - name: rename model
+      run: |
+        mv ./YOLOX_outputs/ouxt-2022-${{ github.event.inputs.model }}/best_ckpt.pth ./YOLOX_outputs/ouxt-2022-${{ github.event.inputs.model }}/${{ github.event.inputs.model }}.pth
     - uses: actions/upload-artifact@v2
       with:
-        name: docker-logs
-        path: ./${{ github.event.inputs.model }}.pth
+        name: weight
+        path: |
+          ./YOLOX_outputs/ouxt-2022-${{ github.event.inputs.model }}/${{ github.event.inputs.model }}.pth
+    - uses: actions/upload-artifact@v2
+      with:
+        name: log
+        path: |
+          ./YOLOX_outputs/ouxt-2022-${{ github.event.inputs.model }}/tensorboard
