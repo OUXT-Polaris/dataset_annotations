@@ -14,9 +14,14 @@ jobs:
     name: Cache Video
     runs-on: ubuntu-20.04
     steps:
+    - uses: actions/cache@v2
+      id: cache_video
+      with:
+        path: video.mp4
+        key: video
     - name: Setup youtube-dl
+      if: steps.cache_video.outputs.cache-hit != 'true'
       uses: AnimMouse/setup-youtube-dl@v1
     - name: download youtube video
-      run: youtube-dl ${{ github.event.inputs.youtube_link }}
-    - name: ls
-      run: ls
+      if: steps.cache_video.outputs.cache-hit != 'true'
+      run: youtube-dl ${{ github.event.inputs.youtube_link }} -o video.mp4
