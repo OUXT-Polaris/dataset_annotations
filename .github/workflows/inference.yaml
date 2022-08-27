@@ -45,4 +45,4 @@ jobs:
         wget https://raw.githubusercontent.com/OUXT-Polaris/YOLOX/file-yolox-s/exps/ouxt-2022-yolox-nano/ouxt-2022-yolox_nano.py
     - name: run inference
       run: |
-        python3 ouxt_demo.py image -f ouxt-2022-${{ github.event.inputs.model }}.py -c ${{ github.event.inputs.model }}.pth -path image.jpeg --conf 0.25 --nms 0.45 --save_result --device
+        python3 ouxt_demo.py image -f ouxt-2022-${{ github.event.inputs.model }}.py -c ${{ github.event.inputs.model }}.pth -path image.jpeg --conf 0.25 --nms 0.45 --save_result --device gpu
