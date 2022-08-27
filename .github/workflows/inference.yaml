@@ -1,4 +1,5 @@
-name: inference
+name: Inference
+on:
   workflow_dispatch:
     inputs:
       image_url:
