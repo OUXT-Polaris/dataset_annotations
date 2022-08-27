@@ -49,4 +49,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: result
-        path: YOLOX_outputs/ouxt-2022-${{ github.event.inputs.model }}/viz_res/*/image.JPG
+        path: YOLOX_outputs
