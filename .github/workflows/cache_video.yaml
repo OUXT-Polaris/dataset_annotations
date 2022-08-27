@@ -7,7 +7,7 @@ on:
         type: string
         required: true
         description: youtube video link
-        default: https://www.youtube.com/watch?v=PDEP1483BN8
+        default: https://www.youtube.com/watch?v=MqDBxzS4uy4
 
 jobs:
   cache_video:
@@ -18,7 +18,7 @@ jobs:
       id: cache_video
       with:
         path: video.mp4
-        key: video
+        key: video-${{ github.event.inputs.youtube_link }}
     - name: Setup youtube-dl
       if: steps.cache_video.outputs.cache-hit != 'true'
       uses: AnimMouse/setup-youtube-dl@v1
