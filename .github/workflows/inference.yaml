@@ -36,6 +36,6 @@ jobs:
         file: ${{ github.event.inputs.model }}.pth
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: download script
-      run: https://github.com/OUXT-Polaris/YOLOX/blob/file-yolox-exps/tools/ouxt_demo.py
+      run: wget https://github.com/OUXT-Polaris/YOLOX/blob/file-yolox-exps/tools/ouxt_demo.py
     - name: download image
       run : wget ${{ github.event.inputs.image_url }}
