@@ -38,6 +38,10 @@ jobs:
     - name: download youtube video
       if: steps.cache_video.outputs.cache-hit != 'true'
       run: youtube-dl ${{ github.event.inputs.youtube_link }} -o video.mp4
+    - uses: actions/upload-artifact@v3
+      with:
+        name: video
+        path: video.mp4
   inference:
     name: Inference
     runs-on: [self-hosted, yolox_trainer]
@@ -46,11 +50,9 @@ jobs:
     - name: Cleanup
       run: |
         rm -rf *
-    - uses: actions/cache@v2
-      id: cache_video
+    - uses: actions/download-artifact@v3
       with:
-        path: video.mp4
-        key: video-${{ github.event.inputs.youtube_link }}
+        name: video
     - uses: dsaltares/fetch-gh-release-asset@master
       with:
         repo: OUXT-Polaris/dataset_annotations
