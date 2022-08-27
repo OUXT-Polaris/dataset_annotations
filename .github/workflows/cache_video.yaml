@@ -1,0 +1,22 @@
+name: Cache Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      youtube_link:
+        type: string
+        required: true
+        description: youtube video link
+        default: https://www.youtube.com/watch?v=PDEP1483BN8
+
+jobs:
+  cache_video:
+    name: Cache Video
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Setup youtube-dl
+      uses: AnimMouse/setup-youtube-dl@v1
+    - name: download youtube video
+      run: youtube-dl ${{ github.event.inputs.youtube_link }}
+    - name: ls
+      run: ls
