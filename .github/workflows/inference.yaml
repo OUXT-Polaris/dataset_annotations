@@ -47,4 +47,4 @@ jobs:
       run: |
         python3 ouxt_demo.py image -f ouxt-2022-${{ github.event.inputs.model }}.py -c ${{ github.event.inputs.model }}.pth --path image.JPG --conf 0.25 --nms 0.45 --save_result --device gpu
     - name: ls
-      run : cd YOLOX_outputs/ls
+      run : cd YOLOX_outputs && ls
