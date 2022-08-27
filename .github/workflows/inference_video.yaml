@@ -63,6 +63,8 @@ jobs:
       run: |
         wget https://raw.githubusercontent.com/OUXT-Polaris/YOLOX/file-yolox-s/exps/ouxt-2022-yolox-s/ouxt-2022-yolox_s.py
         wget https://raw.githubusercontent.com/OUXT-Polaris/YOLOX/file-yolox-s/exps/ouxt-2022-yolox-nano/ouxt-2022-yolox_nano.py
+    - name: ls
+      run: ls
     - name: run inference
       run: |
         python3 ouxt_demo.py video -f ouxt-2022-${{ github.event.inputs.model }}.py -c ${{ github.event.inputs.model }}.pth --path video.mp4 --conf 0.25 --nms 0.45 --save_result --device gpu
