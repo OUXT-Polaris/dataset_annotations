@@ -7,13 +7,25 @@ on:
         type: string
         required: false
         description: URL of the image
+      model:
+        description: model name
+        required: false
+        type: choice
+        options:
+          - yolox_nano
+          - yolox_s
+        default: yolox_nano
 
 jobs:
-  node-docker:
+  inference:
     runs-on: ubuntu-latest
     container:
       image: wamvtan/yolox:latest
     steps:
+      - name: download script
+        run: https://github.com/OUXT-Polaris/YOLOX/blob/file-yolox-exps/tools/ouxt_demo.py
+      - name: download image
+        run : wget ${{ github.event.inputs.model }}.
       - name: check files
         run: ls
       - name: check directory
