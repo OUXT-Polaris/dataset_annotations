@@ -1,0 +1,19 @@
+name: inference
+  workflow_dispatch:
+    inputs:
+      image_url:
+        default: https://user-images.githubusercontent.com/10348912/187019282-cc068be6-b7c3-4507-8615-11e8f9b3f1dd.JPG
+        type: string
+        required: false
+        description: URL of the image
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: wamvtan/yolox:latest
+    steps:
+      - name: check files
+        run: ls
+      - name: check directory
+        run: pwd
