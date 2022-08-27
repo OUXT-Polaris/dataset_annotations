@@ -41,6 +41,7 @@ jobs:
   inference:
     name: Inference
     runs-on: [self-hosted, yolox_trainer]
+    needs: [download_video]
     steps:
     - name: Cleanup
       run: |
