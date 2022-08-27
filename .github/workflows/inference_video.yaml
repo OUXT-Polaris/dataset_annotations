@@ -8,19 +8,19 @@ on:
         required: true
         description: youtube video link
         default: https://www.youtube.com/watch?v=MqDBxzS4uy4
-    model:
-      description: model name
-      required: false
-      type: choice
-      options:
-        - yolox_nano
-        - yolox_s
-      default: yolox_nano
-    version:
-      default: latest
-      type: string
-      required: false
-      description: version of model
+      model:
+        description: model name
+        required: false
+        type: choice
+        options:
+          - yolox_nano
+          - yolox_s
+        default: yolox_nano
+      version:
+        default: latest
+        type: string
+        required: false
+        description: version of model
 
 jobs:
   download_video:
