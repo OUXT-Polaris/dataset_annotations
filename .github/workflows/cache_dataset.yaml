@@ -1,4 +1,4 @@
-name: Cache dataset
+name: Cache Dataset
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   download_dataset:
-    name: download_dataset
+    name: Download Dataset
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/cache@v2
