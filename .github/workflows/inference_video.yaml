@@ -79,6 +79,7 @@ jobs:
         status: |
           てーとく！推論が終わったよ。
           ${{ github.event.inputs.model }}で推論してみたよ
+          モデルのバージョンは${{ github.event.inputs.version }}だよ
         media_paths: |
           inference.mp4
       env:
