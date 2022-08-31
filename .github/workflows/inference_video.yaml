@@ -72,3 +72,17 @@ jobs:
       with:
         name: result
         path: YOLOX_outputs
+    - name: rename video
+      run: cp $(find YOLOX_outputs/ -regex '.*.mp4') inference.mp4
+    - uses: snow-actions/tweet@v1.3.0
+      with:
+        status: |
+          てーとく！推論が終わったよ。
+          ${{ github.event.inputs.model }}で推論してみたよ
+        media_paths: |
+          inference.mp4
+      env:
+        CONSUMER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+        CONSUMER_API_SECRET_KEY: ${{ secrets.TWITTER_API_KEY_SECRET }}
+        ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+        ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
