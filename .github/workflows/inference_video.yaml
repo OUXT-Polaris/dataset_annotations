@@ -80,7 +80,7 @@ jobs:
           てーとく！推論が終わったよ。
           ${{ github.event.inputs.model }}で推論してみたよ
           モデルのバージョンは${{ github.event.inputs.version }}だよ
-          ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+          "https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           #OUXT_ML
         media_paths: |
           inference.mp4

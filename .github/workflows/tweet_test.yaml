@@ -1,0 +1,20 @@
+name: Tweet Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  tweet_test:
+    name: Tweet test
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: snow-actions/tweet@v1.3.0
+        with:
+          status: |
+            てすてす
+            "https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+        env:
+          CONSUMER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          CONSUMER_API_SECRET_KEY: ${{ secrets.TWITTER_API_KEY_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
