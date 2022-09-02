@@ -12,7 +12,7 @@ jobs:
         with:
           status: |
             てすてす
-            "https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
         env:
           CONSUMER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           CONSUMER_API_SECRET_KEY: ${{ secrets.TWITTER_API_KEY_SECRET }}
