@@ -8,8 +8,11 @@ jobs:
     name: Tweet test
     runs-on: ubuntu-20.04
     steps:
+      - id: get_url
+        name: get_url
+        run: echo "::set-output name=url::https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
       - name: echo
-        run: echo https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+        run: echo "${{ steps.get_url.outputs.url }}"
       - uses: snow-actions/tweet@v1.3.0
         with:
           status: |
