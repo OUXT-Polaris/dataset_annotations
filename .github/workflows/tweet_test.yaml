@@ -8,6 +8,8 @@ jobs:
     name: Tweet test
     runs-on: ubuntu-20.04
     steps:
+      - name: echo
+        run: echo https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
       - uses: snow-actions/tweet@v1.3.0
         with:
           status: |
