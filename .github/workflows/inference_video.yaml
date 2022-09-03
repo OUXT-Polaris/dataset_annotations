@@ -74,9 +74,9 @@ jobs:
         path: YOLOX_outputs
     - name: rename video
       run: cp $(find YOLOX_outputs/ -regex '.*.mp4') inference.mp4
-      - id: get_url
-        name: get_url
-        run: echo "::set-output name=url::https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+    - id: get_url
+      name: get_url
+      run: echo "::set-output name=url::https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
     - uses: snow-actions/tweet@v1.3.0
       with:
         status: |
